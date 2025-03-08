@@ -13,6 +13,30 @@ function view3(){
     alert("Central, Hong Kong, is renowned for its financial services. It serves as a global financial hub with major banks and financial institutions.")
 }
 
+function food_view1(){
+    alert("Siu mai, is a dumplings made with pork, shrimp and mushroom. It is commonly sold as street food. We recognise siu mai by its yellow skin and orange adornments of either fish eggs or diced carrot.")
+}
+
+function food_view2(){
+    alert("The egg tart is a popular pastry with a flaky crust and a smooth, creamy filling made from eggs, sugar, and milk. Typically served with warm, usually find in bakery.")
+}
+
+function food_view3(){
+    alert("Char siu, also known as Chinese barbecue pork, is a popular Cantonese dish characterized by its sweet and savory flavor. The pork is marinated in a mixture of honey, soy sauce, five-spice powder. It is often served with rice or noodles")
+}
+
+function map_of_siumai() {
+    location.href = "https://www.google.com/maps/search/%E9%85%92%E6%A8%93/@22.3330074,114.0294935,11z?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D"
+}
+
+function map_of_eggtart() {
+    location.href = "https://www.google.com/maps/search/%E9%BA%B5%E5%8C%85%E5%BA%97/@22.324734,114.2313765,13z?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D"
+}
+
+function map_of_chasiu() {
+    location.href = "https://www.google.com/maps/search/%E7%87%92%E5%91%B3/@22.3466363,114.1854002,12.07z/data=!4m2!2m1!6e5?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D"
+}
+
 //Function2: Rating
 function rating(){
     //获取评分
