@@ -30,12 +30,28 @@ p {
     list-style: none;
     margin:0;
     padding:0;
+    background-color: rgba(211, 211, 211, 0.40);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navigation-bar > li {
+    padding: 0 15px;
 }
 
 .navigation-bar > li > a {
     color: rgb(255, 255, 255);
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
+
+.navigation-bar > li > a:hover {
+    color: #ff4500;
+}
+
 
 /* Homepage start here*/
 
@@ -44,6 +60,7 @@ p {
     height: 100vh;
     margin:0;
     padding:0;
+    position: relative;
 }
 
 .homepage{
@@ -51,6 +68,14 @@ p {
     height:100%;
     background: url("https://images.unsplash.com/photo-1513622790541-eaa84d356909?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-image 1s ease;
    
 }
 
@@ -67,6 +92,36 @@ p {
 
 .header > p{
     transform: translate(0, -40px);
+}
+
+.explore-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: rgba(211, 211, 211, 0.40);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #ff6347;
+}
+
+.side-btn {
+    padding: 4px 20px;
+    background-color: rgba(211, 211, 211, 0.40);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.side-btn:hover {
+    background-color: #ff6347;
 }
 /* Homepage ends here*/
 
@@ -122,10 +177,11 @@ p {
 
 h4 {
     text-align: center;
+    position: relative;
     color: white;
     font-size:24px;
     text-decoration:underline;
-    transform: translate(0, -400px);
+    transform: translate(0, -450px);
 }
 
 .rating {
@@ -148,7 +204,7 @@ h4 {
 
 .quiz {
     text-align: center;
-    transform: translate(0, -80px);
+    transform: translate(0, -40px);
 }
 
 

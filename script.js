@@ -26,7 +26,7 @@ function rating(){
         if (rating>=1 && rating<=5){
             localStorage.setItem("rating", rating);
             alert(`Your rating ${rating} has been stored!`);
-            document.getElementById("rating").value = "";
+            document.getElementById("ratingInput").value = "";
             document.getElementById("rating-score").innerText = rating;
         }
         //如果无效，提示重新输入

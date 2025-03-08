@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Tips</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+      height: 100vh;
+      overflow: auto;
+    }
+    .homepage {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      transition: background-image 1s ease;
+      z-index: -1;
+    }
+    h2 {
+      color: #ff6347;
+      text-align: center;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    li {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    img {
+      max-width: 100px;
+      max-height: 100px;
+      margin-right: 10px;
+    }
+    .input-area {
+      margin: 20px 0;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    textarea {
+      width: 80%;
+      max-width: 400px;
+      height: 60px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #ff6347;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e5533d;
+    }
+    .like-btn {
+      background-color: #4CAF50;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+    .like-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<div class="homepage"></div>
+<h2>User-Shared Tips</h2>
+<form name="userTipsForm">
+  <div class="input-area">
+    <label>Tip:</label><br>
+    <textarea name="tipInput" placeholder="Share your travel tip here..." required></textarea><br><br>
+    <label>Image (optional):</label><br>
+    <input type="file" name="imageInput" accept="image/*"><br><br>
+    <input type="button" value="Submit Tip" onclick="processTip()"><br><br>
+  </div>
+</form>
+<ul id="tips-list"></ul>
+
+<script src="Carousel.js">
+  changeInput();
+</script>
+</body>
+</html>
