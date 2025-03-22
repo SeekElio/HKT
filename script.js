@@ -13,43 +13,44 @@ function view3(){
     alert("Central, Hong Kong, is renowned for its financial services. It serves as a global financial hub with major banks and financial institutions.")
 }
 
-//Function2: Rating
-function rating(){
-    //获取评分
-    ratingInput = document.getElementById("ratingInput").value;
-    //评分功能：
-    ///判断评分是否为数字
-    if (ratingInput != null && !isNaN(ratingInput)){
-        //如果是数字，转换字符串为整数，验证评分是否有效
+// Function2: Rating
+function rating(destinationId) {
+    // 获取评分输入框的值
+    let ratingInput = document.getElementById("ratingInput" + destinationId).value;
+    // 评分功能：
+    // 判断评分是否为数字
+    if (ratingInput != null && !isNaN(ratingInput)) {
+        // 如果是数字，转换字符串为整数，验证评分是否有效
         let rating = parseInt(ratingInput);
-        //如果有效:1.储存到后台并提示储存成功，2.清空输入框，3.并显示在卡面上
-        if (rating>=1 && rating<=5){
-            localStorage.setItem("rating", rating);
-            alert(`Your rating ${rating} has been stored!`);
-            document.getElementById("ratingInput").value = "";
-            document.getElementById("rating-score").innerText = rating;
+        // 如果有效: 1.储存到后台并提示储存成功，2.清空输入框，3.并显示在卡面上
+        if (rating >= 1 && rating <= 5) {
+            localStorage.setItem("rating" + destinationId, rating);
+            alert(`Your rating ${rating} for destination ${destinationId} has been stored!`);
+            document.getElementById("ratingInput" + destinationId).value = "";
+            document.getElementById("rating-score" + destinationId).innerText = rating;
         }
-        //如果无效，提示重新输入
-        else{
+        // 如果无效，提示重新输入
+        else {
             alert("Invalid input! Please enter an integer among 1-5.");
         }
     }
-    //如果不是数字，提示输入数字
-    else{
+    // 如果不是数字，提示输入数字
+    else {
         alert("Invalid input! Please enter an integer.");
     }
 }
 
-//Function3: Display rating
-window.onload = function loadRating(){
-    let storedRating = localStorage.getItem("rating");
-    if (storedRating) {
-        document.getElementById("rating-score").innerText = storedRating;
-        document.getElementById("display-Rating").style.opacity = 1; 
+// Function3: Display rating
+window.onload = function loadRating() {
+    for (let i = 1; i <= 3; i++) {
+        let storedRating = localStorage.getItem("rating" + i);
+        if (storedRating) {
+            document.getElementById("rating-score" + i).innerText = storedRating;
+            document.getElementById("display-Rating" + i).style.opacity = 1;
+        }
     }
 }
-window.onload();
-
+window.onload()
 //Function4: Quiz
 function startQuiz(){
     //Check wheter user wants to start
