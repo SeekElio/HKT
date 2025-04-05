@@ -1,6 +1,6 @@
 var images = [
     "https://images.unsplash.com/photo-1513622790541-eaa84d356909?q=80&w=1974&auto=format&fit=crop",
-    "images/HK 3.jpg",
+    "images/HK_3.jpg",
     "images/HongKong photo1.jpg",
     "images/HongKong photo2.jpg",
     "images/Hongkong photo3.jpg"
@@ -12,6 +12,7 @@ var likeQuota = 10;
 var currentImageData = "";
 
 function changeBackground() {
+    console.log("Setting background image to:", images[currentIndex]);
     homepage.style.backgroundImage = "url('" + images[currentIndex] + "')";
     currentIndex = (currentIndex + 1) % images.length;
     setTimeout(changeBackground, 5000);
