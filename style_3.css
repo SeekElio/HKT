@@ -1,0 +1,109 @@
+.CalAndList {
+    display: flex;
+    justify-content: center;
+    height: 500px;
+}
+
+.calendar {
+    width: 563px;
+    font-size: 36px;
+
+}
+.calendar p{
+    color: azure;
+    background-color: black;
+    border: 2px solid;
+    border-radius: 24px;
+    height: 39px;
+    width: 97%;
+    padding: 6px;
+    margin-bottom: 20px;
+    margin-top: 9px;
+    position: relative;
+    left: -10px;
+}
+.calendar b {
+    position: relative;
+    left: 135px;
+    font-size: 30px
+}
+.calendar pre{
+    border: 2px solid black;
+    border-radius: 22px;
+    padding: 12px;
+    width: 426px;
+    margin: 0;
+    font-family: monospace;
+    background-color: white;
+}
+.container{
+    border: solid;
+    border-radius: 10px;    
+    font-family: monospace;
+    background-color: white;
+}
+
+.container th {
+    position: sticky;
+    top: 0;
+    border: 1px solid;
+    border-radius:15px ;
+    color: white;
+    background-color: black;
+}
+
+.EventList li{
+    font-family: monospace;
+    font-weight: bold;
+}
+.container td {
+    color: rgb(15, 14, 14);
+    padding: 8px 7px;
+    border: solid;
+    border-radius: 15px;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.EventList h3{
+    position: relative;
+    width: 294px;
+    font-size: 25px;;
+
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+.container {
+    height: 200px;
+    overflow-y: auto;
+    position: relative;
+    width: 400px;
+    font-size: 20px;
+    border-collapse: collapse;
+}
+
+.fstblock {
+    top: 10px;
+    width: 100%;
+}
+.fstblock img{
+    position: relative;
+    width: 175px;
+    height: 175px;
+    left: 122px;
+    right: 122px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border-style: outset;
+    border-width: medium;
+}
+
+.fstblock button{
+    position: relative;
+    width: 187px;
+    margin-bottom: 35px;
+    right: 86px;
+}
