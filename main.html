@@ -111,8 +111,160 @@
     <section id="Food Recommendation" class="Food Recommendation">
         <div>
             <h2>Food Recommendation</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero culpa pariatur iusto sequi, ut expedita soluta nihil est quaerat itaque corporis maiores in, at id officiis tempore. Harum vitae fugit itaque expedita asperiores vero delectus?</p>
+            <div class="view-block">
+                <div class="block1">
+                    <div class="card">
+                        <div class="image">
+                            <img src="https://cdn.cybassets.com/media/W1siZiIsIjI5NDA5L3Byb2R1Y3RzLzQ2OTI5MjAxLzE3MTgzMzQ5MjZfOTZmYjNlMmRjNjQ1M2E0OGIxMjkuanBlZyJdLFsicCIsInRodW1iIiwiNjAweDYwMCJdXQ.jpeg?sha=c4c4a47c6f846f59">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="button" value="View Detail" onclick="food_view1()">
+                    </div>
+                    <h4 class="food-title">Siu Mai</h4>
+                    <div class="map-button">
+                        <input type="button" value="map of siu mai" onclick="map_of_siumai()">
+                    </div>
+                </div>
+                <div class="block2">
+                    <div class="card">
+                        <div class="image">
+                            <img src="https://www.allrecipes.com/thmb/1LQvIzt3YRpgHntjepAICFXZiBE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/7743280-d68ea2ab4fb9400fb57f9113a8ff6e00.jpg">
+                        </div>       
+                    </div>
+                    <div class="button">
+                        <input type="button" value="View Detail" class="ratingButton" onclick="food_view2()">
+                    </div> 
+                    <h4 class="food-title">Egg tart</h4>
+                <div class="map-button">
+                    <input type="button" value="map of egg tart" onclick="map_of_eggtart()">
+                </div>
+                </div>
+                <div class="block3">
+                    <div class="card">
+                        <div class="image">
+                            <img src="https://christieathome.com/wp-content/uploads/2022/10/Air-Fryer-Char-Siu-38.jpg">          
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="button" value="View Detail" onclick="food_view3()">
+                    </div> 
+                    <h4 class="food-title">Cha siu</h4>
+                    <div class="map-button">
+                        <input type="button" value="map of cha siu" onclick="map_of_chasiu()">
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="vote-container">
+            <h1 class="poll-question">
+              Which food do you like most?
+            </h1>
+            <form id="poll-form" class="poll-form">
+                <label>
+                    <input type="radio" 
+                            name="vote" 
+                            value="Siu mai"> Siu mai
+                </label>
+                <label>
+                    <input type="radio" 
+                            name="vote" 
+                            value="Egg tart"> Egg tart
+                </label>
+                <label>
+                    <input type="radio" 
+                            name="vote" 
+                            value="Cha siu"> Cha siu
+                </label>
+                <button type="submit" 
+                        class="vote-button">
+                    Vote
+                </button>
+            </form>
+            <div id="results" class="results">
+                <h2 class="results-title">
+                    Results
+                </h2>
+                <div class="results-count">
+                    <p>Siu mai: 
+                        <span id="Siumai-count" 
+                            class="count">0
+                        </span>
+                    </p>
+                    <p>Egg tart: 
+                        <span id="Eggtart-count" 
+                            class="count">0
+                        </span>
+                    </p>
+                    <p>Cha siu: 
+                        <span id="Chasiu-count" 
+                            class="count">0
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h2>Let's start the quiz</h2>
+            <div class="food-quiz">
+                <form name = "quiz">
+                    <div>
+                    Where can you find the egg tart?
+                    </div>
+                    <div>
+                    <label for="option1">A) Bakery</label>
+                    </div>
+                    <div>
+                    <label for="option2">B) Fast food shop</label>
+                    </div>
+                    <div>
+                    <label for="option3">C) Japanese restaurant</label>
+                    </div>
+                    <div>
+                    <label for="option4">D) Grocery store</label>
+                    </div>
+                    <textarea name= "answerQ1" value = "" rows="1" cols="5"></textarea>
+                    <input type="button" onclick="checkAnswerQ1()" value = "Submit Answer">
+                    <textarea name= "correctnessQ1" rows="1" cols="50" readonly></textarea>
+
+                    <div>
+                    Which of the following is not the ingredients of siu mai?
+                    </div>
+                    <div>
+                    <label for="option1">A) Pork </label>
+                    </div>
+                    <div>
+                    <label for="option2">B) Shrimp</label>
+                    </div>
+                    <div>
+                    <label for="option3">C) Cucumber</label>
+                    </div>
+                    <div>
+                    <label for="option4">D) Mushroom</label>
+                    </div>
+                    <textarea name= "answerQ2" value = "" rows="1" cols="5"></textarea>
+                    <input type="button" onclick="checkAnswerQ2()" value = "Submit Answer">
+                    <textarea name= "correctnessQ2" rows="1" cols="50" readonly></textarea>
+
+                    <div>
+                    Which of the following is not needed when making cha siu?
+                    </div>
+                    <div>
+                    <label for="option1">A) Honey </label>
+                    </div>
+                    <div>
+                    <label for="option2">B) Sesame oil</label>
+                    </div>
+                    <div>
+                    <label for="option3">C) Soy sauce</label>
+                    </div>
+                    <div>
+                    <label for="option4">D) Five-spice powder</label>
+                    </div>
+                    <textarea name= "answerQ3" value = "" rows="1" cols="5"></textarea>
+                    <input type="button" onclick="checkAnswerQ3()" value = "Submit Answer">
+                    <textarea name= "correctnessQ3" rows="1" cols="50" readonly></textarea>
+                </form>
+            </div>
     </section>
     <!-- Anno's section ends here-->
     <br><br>
