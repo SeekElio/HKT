@@ -421,3 +421,117 @@ h4 {
     transform: translate(5px, -80px);
 }
 /*Food Recommendation end*/
+
+/*History starts here*/
+.History {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.history-header{
+    max-width: 800px;
+    padding: 180px;
+    background: url("History/hongkong_background.jpg");
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;   
+}
+.history-header > h2 {
+    color: white;
+}
+.history-header > p {
+    color: white;
+}
+
+.history-header > button{
+    background: #00c6ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+}
+
+.section {
+    padding: 60px 20px 20px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.content {
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.content >p {
+    text-align: left;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.content > h2{
+    text-align: center;
+    color: #fff;
+}
+
+.History-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.History-quiz {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    margin: 20px;
+    border-radius: 20px;
+    display: none;
+}
+
+.History-quiz button {
+    background: #00c6ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.History-quiz button:hover {
+    background: #007bff;
+}
+
+#statsGraph {
+    width: 250px;
+    height: 120px;
+    background: #2a2a2a;
+    border: 1px solid #00c6ff;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    display: none;
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*History ends here*/

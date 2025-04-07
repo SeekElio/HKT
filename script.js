@@ -179,3 +179,140 @@ function checkAnswerQ3(){
         document.quiz.correctnessQ3.value ="you are correct!"
     } else {document.quiz.correctnessQ3.value ="you are wrong, the correct answer is B"}
 }
+
+/*History*/
+const quizQuestions = [
+    {
+        question: "When was Hong Kong handed back to China?",
+        answers: ["1945", "1997", "1984", "2000"],
+        correct: 1,
+        stats: [10, 60, 20, 10]
+    },
+    {
+        question: "What treaty marked the start of British rule over Hong Kong in 1842?",
+        answers: ["Treaty of Peking", "Treaty of Nanking", "Treaty of Versailles", "Sino-British Declaration"],
+        correct: 1,
+        stats: [15, 55, 20, 10]
+    },
+    {
+        question: "In 2008, which Olympic events did Hong Kong host?",
+        answers: ["Swimming", "Gymnastics", "Equestrian", "Track and Field"],
+        correct: 2,
+        stats: [20, 15, 50, 15]
+    },
+    {
+        question: "What principle was established for Hong Kong during the 1997 handover?",
+        answers: ["One Country, Two Systems", "Two Countries, One System", "One Nation, One Law", "Complete Autonomy"],
+        correct: 0,
+        stats: [65, 15, 10, 10]
+    },
+    {
+        question: "Why did Britain want Hong Kong in 1842?",
+        answers: ["Tourism", "Military Base", "Opium Trade", "Cultural Exchange"],
+        correct: 2,
+        stats: [10, 20, 55, 15]
+    }
+];
+
+let currentQuestionIndex = 0;
+let fiftyFiftyUsed = false;
+const homeSection = document.getElementsByClassName("history-header")[0];
+const quizSection = document.getElementById("History-quiz");
+const section1842 = document.getElementById("1842");
+const section1997 = document.getElementById("1997");
+const section2008 = document.getElementById("2008");
+const questionElement = document.getElementById("question");
+const answerButtons = document.getElementsByClassName("answer");
+const resultElement = document.getElementById("result");
+const statsGraph = document.getElementById("statsGraph");
+const nextButton = document.getElementById("nextQuestion");
+
+function showQuiz() {
+    homeSection.style.display = "none";
+    section1842.style.display = "none";
+    section1997.style.display = "none";
+    section2008.style.display = "none";
+    quizSection.style.display = "block";
+    currentQuestionIndex = 0;
+    loadQuestion();
+}
+
+function showHome() {
+    quizSection.style.display = "none";
+    homeSection.style.display = "block";
+    section1842.style.display = "flex";
+    section1997.style.display = "flex";
+    section2008.style.display = "flex";
+    fiftyFiftyUsed = false;
+    document.getElementById("fiftyFifty").disabled = false;
+    resultElement.textContent = "";
+    statsGraph.style.display = "none";
+    nextButton.style.display = "none";
+    for (let i = 0; i < answerButtons.length; i++) {
+        answerButtons[i].style.display = "inline-block";
+    }
+}
+
+function loadQuestion() {
+    const currentQuiz = quizQuestions[currentQuestionIndex];
+    questionElement.textContent = currentQuiz.question;
+    for (let i = 0; i < currentQuiz.answers.length; i++) {
+        answerButtons[i].textContent = currentQuiz.answers[i];
+        answerButtons[i].style.display = "inline-block";
+    }
+    resultElement.textContent = "";
+    statsGraph.style.display = "none";
+    nextButton.style.display = "none";
+}
+
+function checkAnswer(selected) {
+    const currentQuiz = quizQuestions[currentQuestionIndex];
+    if (selected === currentQuiz.correct) {
+        resultElement.textContent = "Correct!";
+    } else {
+        resultElement.textContent = "Wrong! The answer was " + currentQuiz.answers[currentQuiz.correct];
+    }
+    nextButton.style.display = "inline-block";
+}
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizQuestions.length) {
+        loadQuestion();
+        fiftyFiftyUsed = false;
+        document.getElementById("fiftyFifty").disabled = false;
+    } else {
+        resultElement.textContent = "Quiz completed! Return home to restart.";
+        nextButton.style.display = "none";
+    }
+}
+
+function useFiftyFifty() {
+    if (fiftyFiftyUsed) {
+        alert("You’ve already used the 50:50 tip for this question!");
+        return;
+    }
+    fiftyFiftyUsed = true;
+    document.getElementById("fiftyFifty").disabled = true;
+    const currentQuiz = quizQuestions[currentQuestionIndex];
+    let wrongIndex = (currentQuiz.correct + 1) % 4;
+    for (let i = 0; i < answerButtons.length; i++) {
+        if (i !== currentQuiz.correct && i !== wrongIndex) {
+            answerButtons[i].style.display = "none";
+        }
+    }
+}
+
+function showStats() {
+    const currentQuiz = quizQuestions[currentQuestionIndex];
+    statsGraph.style.display = "block";
+    statsGraph.innerHTML = "Statistics:<br>" +
+        currentQuiz.answers.map((ans, i) => `${ans}: ${currentQuiz.stats[i]}%`).join("<br>");
+}
+
+window.onload = function() {
+    section1842.style.display = "flex";
+    section1997.style.display = "flex";
+    section2008.style.display = "flex";
+    quizSection.style.display = "none";
+};

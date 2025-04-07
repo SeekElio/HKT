@@ -20,7 +20,7 @@
                     <li><a href="#Destination">Destination</a></li>
                     <li><a href="#Food Recommendation">Food Recommendation</a></li>
                     <li><a href="#Event">Event</a></li>
-                    <li><a href="#History/News">History/News</a></li>
+                    <li><a href="#History">History</a></li>
                     <button id="share-tips-btn" class="side-btn" onclick="window.location.href='Homepage/user-tips.html'">User Tips</button>
                 </ul>
             </nav>
@@ -416,11 +416,64 @@
     <br><br>
 
     <!-- Max's section starts here-->
-    <section id="History/News" class="History/News">
-        <div>
-            <h2>History/News</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero culpa pariatur iusto sequi, ut expedita soluta nihil est quaerat itaque corporis maiores in, at id officiis tempore. Harum vitae fugit itaque expedita asperiores vero delectus?</p>
-        </div>
+    <section id="History" class="History">
+        <h2>History</h2>
+        <section class="history-header">
+            <h2>Do you know Hong Kong history?</h2>
+            <p>Explore the rich history of Hong Kong through key milestones.</p>
+            <button onclick="showQuiz()">Start Quiz</button>
+        </section>
+        <section id="1842" class="section">
+            <div class="content">
+                <h2>1842 - The Beginning of British Rule</h2>
+                <div class="History-image">
+                    <img src="History/hongkong_1842.jpg" alt="Hong Kong in 1842">
+                </div>
+                <p>Hong Kong's modern history began in 1842 with the signing of the Treaty of Nanking, which concluded the First Opium War between Britain and the Qing Dynasty of China. This treaty ceded Hong Kong Island to Britain, marking the start of over 150 years of colonial rule. The decision came after Britain sought to expand its trade influence, particularly in the opium trade, and Hong Kong's strategic location as a deep-water port made it an ideal base. Initially, the island was sparsely populated, but it quickly grew into a bustling trading hub under British administration. Key developments included the establishment of a government, the construction of infrastructure like roads and docks, and the influx of merchants and laborers from China and beyond. This period laid the foundation for Hong Kong's transformation into a global economic center.</p>
+            </div>
+        </section>
+    
+        <section id="1997" class="section">
+            <div class="content">
+                <h2>1997 - Handover to China</h2>
+                <div class="History-image">
+                    <img src="History/hongkong_1997.jpg" alt="Hong Kong Handover in 1997">
+                </div>
+                <p>On July 1, 1997, Hong Kong was officially handed back to China, ending 156 years of British colonial rule. This historic event, known as the Handover, was governed by the Sino-British Joint Declaration signed in 1984, which established the "One Country, Two Systems" principle. Under this framework, Hong Kong was allowed to retain its capitalist system, legal structure, and certain freedoms for 50 years (until 2047), while becoming a Special Administrative Region (SAR) of China. The handover ceremony, held at the new Hong Kong Convention and Exhibition Centre, was a global spectacle, symbolizing the end of an era and the beginning of a new chapter. Since 1997, Hong Kong has continued to thrive as a financial hub, though it has faced challenges in balancing its unique identity with increasing integration into mainland China.</p>
+            </div>
+        </section>
+    
+        <section id="2008" class="section">
+            <div class="content">
+                <h2>2008 - Co-Hosting the Beijing Olympics</h2>
+                <div class="History-image">
+                    <img src="History/HongKongin2008.jpeg" alt="Hong Kong in 2008">
+                </div>
+                <p>In 2008, Hong Kong stepped onto the world stage by co-hosting the Summer Olympics with Beijing, specifically managing the equestrian events from August 9 to 21. This was a big deal—Hong Kong, now a Special Administrative Region (SAR) of China, showcased its ability to handle a global event 11 years after the handover. The competitions, including dressage, show jumping, and eventing, took place at the upgraded Sha Tin Racecourse and a new venue in Beas River, drawing athletes and spectators from around the world.</p>
+            </div>
+        </section>
+    
+        <section id="History-quiz" class="History-quiz">
+            <h2>Q&A: Test Your Knowledge</h2>
+            <p id="question"></p>
+            <div class="center">
+                <button class="answer" onclick="checkAnswer(0)">A</button>
+                <button class="answer" onclick="checkAnswer(1)">B</button>
+                <button class="answer" onclick="checkAnswer(2)">C</button>
+                <button class="answer" onclick="checkAnswer(3)">D</button>
+            </div>
+            <br>
+            <div class="center">
+                <button id="fiftyFifty" onclick="useFiftyFifty()">50:50 Tip (1 use only)</button>
+                <button id="stats" onclick="showStats()">Statistics Tip</button>
+                <button id="nextQuestion" onclick="nextQuestion()" style="display: none;">Next Question</button>
+            </div>
+            <p id="result"></p>
+            <div id="statsGraph"></div>
+            <div class="center">
+                <button onclick="showHome()">Back to Home</button>
+            </div>
+        </section>
     </section>
     <!-- Max's section ends here-->
     <br><br>
