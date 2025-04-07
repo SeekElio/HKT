@@ -222,7 +222,7 @@ h4 {
 
 .quiz {
     text-align: center;
-    transform: translate(0, -40px);
+    transform: translate(0, -80px);
 }
 
 
@@ -404,6 +404,7 @@ h4 {
 /*vote function end*/
 .food-quiz {
     padding: 20px; 
+    text-align: center;
   }
 
 .food-title {
